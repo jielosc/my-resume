@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>刘润田 - 简历</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --accent: #2c5f8a;
+    --accent-light: #eaf1f7;
+    --sidebar-bg: #2c3e50;
+    --sidebar-text: #e8edf2;
+    --sidebar-muted: #aeb9c4;
+    --text: #2d3436;
+    --text-light: #636e72;
+    --line: #e1e6ea;
+  }
+
+  html, body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", -apple-system, sans-serif;
+    color: var(--text);
+    background: #f0f2f5;
+    line-height: 1.5;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 16px auto;
+    background: #fff;
+    display: grid;
+    grid-template-columns: 64mm 1fr;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    overflow: hidden;
+  }
+
+  /* ---------- LEFT SIDEBAR ---------- */
+  .sidebar {
+    background: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    padding: 28px 20px;
+  }
+
+  .sidebar .name {
+    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 4px;
+  }
+
+  .sidebar .title {
+    font-size: 12px;
+    color: var(--sidebar-muted);
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+  }
+
+  .side-section { margin-bottom: 24px; }
+
+  .side-section h2 {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #fff;
+    padding-bottom: 6px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.22);
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    font-size: 12px;
+    margin-bottom: 9px;
+    color: var(--sidebar-text);
+    word-break: break-all;
+  }
+  .contact-item .ico {
+    width: 16px;
+    flex-shrink: 0;
+    margin-right: 8px;
+    color: #6fb1e0;
+    text-align: center;
+  }
+  .contact-item a { color: var(--sidebar-text); text-decoration: none; }
+  .contact-item a:hover { color: #6fb1e0; }
+
+  .skill-group { margin-bottom: 13px; }
+  .skill-group .label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #6fb1e0;
+    margin-bottom: 5px;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    background: rgba(255,255,255,0.1);
+    color: var(--sidebar-text);
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin: 0 4px 4px 0;
+  }
+
+  .about-line {
+    font-size: 12px;
+    color: var(--sidebar-text);
+    margin-bottom: 9px;
+    line-height: 1.65;
+  }
+  .about-line .k { color: #6fb1e0; font-weight: 600; }
+
+  /* ---------- RIGHT MAIN ---------- */
+  .main {
+    padding: 32px 30px;
+  }
+
+  .main section { margin-bottom: 22px; }
+
+  .main h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    margin-bottom: 13px;
+  }
+  .main h2::before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 17px;
+    background: var(--accent);
+    border-radius: 2px;
+    margin-right: 9px;
+  }
+
+  .entry { margin-bottom: 13px; }
+  .entry:last-child { margin-bottom: 0; }
+
+  .entry-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 3px;
+  }
+  .entry-title {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .entry-title a { color: var(--accent); text-decoration: none; }
+  .entry-date {
+    font-size: 11.5px;
+    color: var(--text-light);
+    white-space: nowrap;
+    margin-left: 12px;
+  }
+  .entry-sub {
+    font-size: 12.5px;
+    color: var(--text-light);
+    margin-bottom: 5px;
+  }
+  .entry-sub .hl { color: var(--accent); font-weight: 600; }
+
+  .entry p {
+    font-size: 12.5px;
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  .entry ul { list-style: none; }
+  .entry ul li {
+    position: relative;
+    font-size: 12.5px;
+    color: var(--text);
+    padding-left: 14px;
+    margin-bottom: 4px;
+    line-height: 1.6;
+  }
+  .entry ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 5px;
+    height: 5px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+
+  /* honors as compact rows */
+  .honor-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 12.5px;
+    padding: 4px 0;
+    border-bottom: 1px dashed var(--line);
+  }
+  .honor-row:last-child { border-bottom: none; }
+  .honor-row .award { font-weight: 600; color: var(--accent); }
+  .honor-row .desc { color: var(--text); }
+  .honor-row .hdate { color: var(--text-light); font-size: 11.5px; white-space: nowrap; margin-left: 12px; }
+
+  .tag-light {
+    display: inline-block;
+    font-size: 11px;
+    background: var(--accent-light);
+    color: var(--accent);
+    padding: 1px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; box-shadow: none; width: 210mm; }
+    @page { size: A4; margin: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <!-- ===== LEFT SIDEBAR ===== -->
+  <aside class="sidebar">
+    <div class="name">刘润田</div>
+    <div class="title">信息与计算科学 · 本科在读</div>
+
+    <div class="side-section">
+      <h2>联系方式</h2>
+      <div class="contact-item"><span class="ico">&#9742;</span><span></span></div>
+      <div class="contact-item"><span class="ico">&#9993;</span><a href="mailto:hi@icelon.top">hi@icelon.top</a></div>
+      <div class="contact-item"><span class="ico">&#127760;</span><a href="https://icelon.top">icelon.top</a></div>
+      <div class="contact-item"><span class="ico">&#9737;</span><a href="https://github.com/jielosc">github.com/jielosc</a></div>
+    </div>
+
+    <div class="side-section">
+      <h2>专业技能</h2>
+      <div class="skill-group">
+        <div class="label">Languages</div>
+        <span class="tag">Python</span><span class="tag">C/C++</span><span class="tag">HTML</span><span class="tag">Markdown</span><span class="tag">LaTeX</span>
+      </div>
+      <div class="skill-group">
+        <div class="label">Tools &amp; Platforms</div>
+        <span class="tag">Codex</span><span class="tag">Git</span><span class="tag">VS Code</span><span class="tag">Linux</span>
+      </div>
+    </div>
+
+    <div class="side-section">
+      <h2>自我简介</h2>
+      <div class="about-line"><span class="k">MBTI：</span>ENTP</div>
+      <div class="about-line">对前沿技术（尤其 AI 方向）有强烈好奇心，热衷于探索有挑战性的技术问题。</div>
+      <div class="about-line"><span class="k">兴趣爱好：</span>编程、游戏、前沿科技、音乐、乒乓球</div>
+    </div>
+  </aside>
+
+  <!-- ===== RIGHT MAIN ===== -->
+  <main class="main">
+    <section>
+      <h2>教育背景</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">中南大学</span>
+          <span class="entry-date">2023.09 &ndash; 2027.06</span>
+        </div>
+        <div class="entry-sub">信息与计算科学 · 本科在读</div>
+        <p><span style="color:var(--accent);font-weight:600;">加权成绩：</span>89.9 &nbsp;&nbsp; <span style="color:var(--accent);font-weight:600;">专业排名：</span>10 / 82</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>荣誉奖项</h2>
+      <div class="honor-row"><span><span class="award">银牌</span> <span class="desc">ICPC 亚洲区域赛（杭州）</span></span><span class="hdate">2024.10</span></div>
+      <div class="honor-row"><span><span class="award">省一等奖</span> <span class="desc">全国大学生市场调查与分析大赛</span></span><span class="hdate">2025.04</span></div>
+      <div class="honor-row"><span><span class="award">国家奖学金</span></span><span class="hdate">2024&ndash;2025</span></div>
+      <div class="honor-row"><span><span class="award">全国二等奖</span> <span class="desc">全国大学生数学建模竞赛</span></span><span class="hdate">2025.09</span></div>
+      <div class="honor-row"><span><span class="award">Outstanding Winner &amp; ASA Award</span> <span class="desc">MCM 美国大学生数学建模竞赛</span></span><span class="hdate">2026.01</span></div>
+    </section>
+
+    <section>
+      <h2>科研经历</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">多模态大模型实时通信中的视频传输优化<span class="tag-light">实验室在研</span></span>
+          <span class="entry-date">2026.03 &ndash; 至今</span>
+        </div>
+        <ul>
+          <li>独立负责多模态大模型场景下实时视频传输的延迟优化课题，探究自适应帧率策略对端到端推理延迟与语义保真度的影响</li>
+          <li>从零构建底层运行环境，独立完成模型推理服务部署、数据流转管线搭建及全流程联调</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>项目经历</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">大学生创新训练项目<span class="tag-light">省级立项</span></span>
+          <span class="entry-date">2024.04 &ndash; 2025.05</span>
+        </div>
+        <div class="entry-sub"><span class="hl">课题：</span>基于多模态大模型与 MR 技术的文旅应用探索</div>
+        <p>主导开源多模态模型的本地化部署与评测，构建知识库向量化检索链路（RAG），通过 Prompt 工程与策略优化实现景物识别、智能问答与个性化推荐；完成系统原型开发，打通“检索-生成”完整技术链路。</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title"><a href="https://github.com/jielosc/EigenDigest_bot">EigenDigest Bot</a> —— 基于 LLM 的每日信息摘要机器人</span>
+          <span class="entry-date">2026.02</span>
+        </div>
+        <p>构建基于 LLM 的多用户 Telegram 信息聚合机器人，支持 RSS、网页及微信公众号等多源内容自动抓取与智能摘要生成，实现 Docker 容器化部署与定时推送。</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title"><a href="https://github.com/jielosc/csbaoyan-chat-daily">群聊日报</a> —— 大模型驱动的群聊信息处理与分发系统</span>
+          <span class="entry-date">2026.03 &ndash; 2026.05</span>
+        </div>
+        <ul>
+          <li>搭建群聊数据自动化处理流水线，对非结构化消息进行格式归一化、噪声过滤、隐私脱敏与上下文切分，为大模型语义分析提供标准化输入</li>
+          <li>设计基于大模型的话题识别、信息去重、要点抽取与摘要生成流程，将群聊记录转化为结构化日报，并实现定时执行和多平台自动推送</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</div>
+</body>
+</html>
