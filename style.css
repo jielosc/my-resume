@@ -168,6 +168,22 @@ html, body {
 }
 .entry-sub .hl { color: var(--accent); font-weight: 600; }
 
+.repo-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11.5px;
+  color: var(--text-light);
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+.repo-link svg {
+  width: 13px;
+  height: 13px;
+  margin-right: 5px;
+  flex-shrink: 0;
+}
+.repo-link:hover { color: var(--accent); }
+
 .entry p {
   font-size: 12.5px;
   color: var(--text);
