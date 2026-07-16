@@ -115,12 +115,45 @@ html, body {
 .contact-item a { color: var(--sidebar-text); text-decoration: none; }
 .contact-item a:hover { color: #6fb1e0; }
 
+.interest-list {
+  display: grid;
+  gap: 8px;
+}
+.interest-item {
+  position: relative;
+  padding-left: 14px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.interest-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #6fb1e0;
+}
+
 .skill-group { margin-bottom: 13px; }
 .skill-group .label {
   font-size: 12px;
   font-weight: 600;
   color: #6fb1e0;
   margin-bottom: 5px;
+}
+.course-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.55;
+  margin-bottom: 3px;
+}
+.course-row span:last-child {
+  color: var(--sidebar-muted);
+  font-variant-numeric: tabular-nums;
 }
 .tag {
   display: inline-block;
@@ -282,6 +315,7 @@ a.tag-light { text-decoration: none; }
   .print-bw .contact-item a:hover,
   .print-bw .skill-group .label,
   .print-bw .about-line .k { color: #000; }
+  .print-bw .interest-item::before { background: #000; }
   .print-bw .tag { background: #fff; border: 1px solid #777; }
   .print-bw .tag-light { border: 1px solid #777; }
   @page { size: A4; margin: 0; }
