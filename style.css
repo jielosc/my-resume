@@ -259,6 +259,7 @@ html, body {
   margin-left: 6px;
   vertical-align: middle;
 }
+a.tag-light { text-decoration: none; }
 
 @media print {
   body.print-bw {
