@@ -2,10 +2,6 @@
 
 使用 HTML 和 CSS 编写的单页个人简历，支持在线预览以及彩色、黑白两种 A4 打印模式。
 
-## 在线预览
-
-[jielosc.github.io/my-resume](https://jielosc.github.io/my-resume/)
-
 ## 本地使用
 
 用浏览器打开 `index.html` 即可预览。页面右上角提供“打印彩色版”和“打印黑白版”按钮；导出 PDF 时请选择 A4 纸张、无页边距，并启用背景图形。
@@ -14,6 +10,7 @@
 
 - `index.html`：简历内容、页面结构与打印切换逻辑
 - `style.css`：彩色样式、黑白打印样式与 A4 页面布局
+- `robots.txt`：要求搜索引擎不要抓取站点内容
 
 ## 部署
 
