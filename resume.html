@@ -99,7 +99,7 @@
           <span class="entry-date">2026.03 &ndash; 至今</span>
         </div>
         <ul>
-          <li>面向实时视频 MLLM，基于 MotionBench 对 Qwen2.5-VL-7B、InternVL3-8B 开展 1/2/4 FPS × 360p/480p/720p 消融，分析输入配置对运动理解准确率与 TTFT 的影响</li>
+          <li>面向实时视频 MLLM，基于 MotionBench 2,000+ 问答样本，对 Qwen2.5-VL-7B、InternVL3-8B 系统评测不同帧率与分辨率组合，分析视觉输入配置对运动理解准确率与 TTFT 的影响</li>
           <li>独立开发 RTV-Eval 评测框架，集成视频采样编码、MLLM 推理、答案解析与 SQLite 断点续跑，支持 model × strategy 批量实验及准确率、时延、帧数统计</li>
           <li>设计端侧自适应上传策略，基于低分辨率帧差/SSIM 动态调节帧率、分辨率和关键帧；StreamingBench 50 题初步实验中，较固定低帧率基线准确率 66%→74%，模型 TTFT 335.8→286.9 ms</li>
         </ul>
